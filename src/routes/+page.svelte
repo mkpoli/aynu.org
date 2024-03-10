@@ -7,21 +7,29 @@
 </svelte:head>
 
 <main>
-	<h1>Aynu.org Mosem</h1>
+	<section>
+		<h1>Aynu.org Mosem</h1>
+	</section>
 
-	<h2>Cikarkoranpe</h2>
+	<section>
+		<h2>Cikarkoranpe</h2>
 
-	<ul>
-		<li>
-			<a href="https://wiki.aynu.org/"> Aynuwiki </a>
-		</li>
-		<li>
-			<a href="https://site.aynu.org/"> Aynuitak Inuypa Ukosammaani Sait </a>
-		</li>
-		<li>
-			<a href="https://dict.aynu.org/"> Aynuitak-Eonnekunnep </a>
-		</li>
-	</ul>
+		<ul>
+			<li>
+				<a href="https://wiki.aynu.org/"> Aynuwiki </a>
+			</li>
+			<li>
+				<a href="https://site.aynu.org/"> Aynuitak Inuypa Ukosammaani Sait </a>
+			</li>
+			<li>
+				<a href="https://dict.aynu.org/"> Aynuitak-Eonnekunnep </a>
+			</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Uwerankarap</h2>
+	</section>
 
 	<h2>Uwekarpare</h2>
 
