@@ -1,6 +1,7 @@
 <script lang="ts">
 	import SectionGreetings from '$lib/sections/SectionGreetings.svelte';
 	import SectionMembers from '$lib/sections/SectionMembers.svelte';
+	import SectionProjects from '$lib/sections/SectionProjects.svelte';
 </script>
 
 <svelte:head>
@@ -14,21 +15,7 @@
 
 	<SectionGreetings />
 
-	<section>
-		<h2>Cikarkoranpe</h2>
-
-		<ul>
-			<li>
-				<a href="https://wiki.aynu.org/"> Aynuwiki </a>
-			</li>
-			<li>
-				<a href="https://site.aynu.org/"> Aynuitak Inuypa Ukosammaani Sait </a>
-			</li>
-			<li>
-				<a href="https://dict.aynu.org/"> Aynuitak-Eonnekunnep </a>
-			</li>
-		</ul>
-	</section>
+	<SectionProjects />
 
 	<h2>Uwekarpare</h2>
 
