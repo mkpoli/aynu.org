@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Aynu.org Mosem</title>
+</svelte:head>
+
 <main>
 	<h1>Aynu.org Mosem</h1>
 
