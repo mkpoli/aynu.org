@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SectionGreetings from '$lib/sections/SectionGreetings.svelte';
 	import SectionMembers from '$lib/sections/SectionMembers.svelte';
 </script>
 
@@ -10,6 +11,8 @@
 	<section>
 		<h1>Aynu.org Mosem</h1>
 	</section>
+
+	<SectionGreetings />
 
 	<section>
 		<h2>Cikarkoranpe</h2>
@@ -25,10 +28,6 @@
 				<a href="https://dict.aynu.org/"> Aynuitak-Eonnekunnep </a>
 			</li>
 		</ul>
-	</section>
-
-	<section>
-		<h2>Uwerankarap</h2>
 	</section>
 
 	<h2>Uwekarpare</h2>
