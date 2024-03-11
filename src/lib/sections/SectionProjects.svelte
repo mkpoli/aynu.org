@@ -10,15 +10,15 @@
 	<div class="projects">
 		<a href="https://wiki.aynu.org/">
 			<img src={Aynuwiki} alt="Aynuwiki" />
-			Aynuwiki
+			<h3>Aynuwiki</h3>
 		</a>
 		<a href="https://site.aynu.org/">
 			<img src={Sait} alt="Sait" />
-			Aynuitak Inuypa Ukosammaani Sait
+			<h3>Aynuitak Inuypa Ukosammaani Sait</h3>
 		</a>
 		<a href="https://dict.aynu.org/">
 			<img src={Ieonnekunnep} alt="Ieonnekunnep" />
-			Aynuitak-Eonnekunnep
+			<h3>Aynuitak-Eonnekunnep</h3>
 		</a>
 	</div>
 </section>
