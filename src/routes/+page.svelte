@@ -47,4 +47,9 @@
 		align-items: center;
 		justify-content: center;
 	}
+
+	main > :global(section > h2) {
+		margin-top: 2em;
+		margin-bottom: 2em;
+	}
 </style>
