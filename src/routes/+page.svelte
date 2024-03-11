@@ -28,6 +28,10 @@
 	<SectionMembers />
 </main>
 
+<footer>
+	<p>© 2024 Aynu.org</p>
+</footer>
+
 <style>
 	main {
 		display: flex;
@@ -51,5 +55,14 @@
 	main > :global(section > h2) {
 		margin-top: 2em;
 		margin-bottom: 2em;
+	}
+
+	footer {
+		margin-top: 2em;
+		padding: 2em;
+	}
+
+	footer > p {
+		text-align: center;
 	}
 </style>
