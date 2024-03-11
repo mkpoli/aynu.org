@@ -1,7 +1,10 @@
 <script lang="ts">
-	import Aynuwiki from '$assets/images/Aynuwiki.png';
-	import Sait from '$assets/images/Ukosammaani.png';
-	import Ieonnekunnep from '$assets/images/Ieonnekunnep.png';
+	import AynuwikiPNG from '$assets/images/logos/png/Aynuwiki.png';
+	import AynuwikiAVIF from '$assets/images/logos/avif/Aynuwiki.avif';
+	import UkosammaniPNG from '$assets/images/logos/png/Ukosamani.png';
+	import UkosammaniAVIF from '$assets/images/logos/avif/Ukosamani.avif';
+	import IeonnekunnepPNG from '$assets/images/logos/png/Ieonnekunnep.png';
+	import IeonnekunnepAVIF from '$assets/images/logos/avif/Ieonnekunnep.avif';
 </script>
 
 <section>
@@ -9,16 +12,28 @@
 
 	<div class="projects">
 		<a href="https://wiki.aynu.org/">
-			<img src={Aynuwiki} alt="Aynuwiki" />
+			<picture>
+				<source type="image/avif" srcset={AynuwikiAVIF} />
+				<source type="image/png" srcset={AynuwikiPNG} />
+				<img src={AynuwikiPNG} alt="Aynuwiki" />
+			</picture>
 			<h3>Aynuwiki</h3>
 		</a>
 		<a href="https://site.aynu.org/">
-			<img src={Sait} alt="Sait" />
-			<h3>Aynuitak Inuypa Ukosammaani Sait</h3>
+			<picture>
+				<source type="image/avif" srcset={UkosammaniAVIF} />
+				<source type="image/png" srcset={UkosammaniPNG} />
+				<img src={UkosammaniPNG} alt="Ukosammani" />
+			</picture>
+			<h3>Aynuitak-nuye <br /> Ukosamaani Sait</h3>
 		</a>
 		<a href="https://dict.aynu.org/">
-			<img src={Ieonnekunnep} alt="Ieonnekunnep" />
-			<h3>Aynuitak-Eonnekunnep</h3>
+			<picture>
+				<source type="image/avif" srcset={IeonnekunnepAVIF} />
+				<source type="image/png" srcset={IeonnekunnepPNG} />
+				<img src={IeonnekunnepPNG} alt="Ieonnekunnep" />
+			</picture>
+			<h3>Aynuitak-<br />Eonnekunnep</h3>
 		</a>
 	</div>
 </section>
@@ -35,7 +50,7 @@
 		align-items: center;
 		justify-content: center;
 		flex-wrap: wrap;
-		gap: 1em 2em;
+		gap: 1em 4em;
 	}
 
 	a {
