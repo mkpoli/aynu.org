@@ -5,6 +5,8 @@
 	import UkosammaniAVIF from '$assets/images/logos/avif/Ukosamani.avif';
 	import IeonnekunnepPNG from '$assets/images/logos/png/Ieonnekunnep.png';
 	import IeonnekunnepAVIF from '$assets/images/logos/avif/Ieonnekunnep.avif';
+	import ItakUoeroskipPNG from '$assets/images/logos/png/Itak-uoeroskip.png';
+	import AynuItahPNG from '$assets/images/logos/png/Aynu-Itah.png';
 </script>
 
 <section>
@@ -34,6 +36,20 @@
 				<img src={IeonnekunnepPNG} alt="Ieonnekunnep" />
 			</picture>
 			<h3>Aynuitak-<br />Eonnekunnep</h3>
+		</a>
+		<a href="https://itak.aynu.org/">
+			<picture>
+				<source type="image/png" srcset={ItakUoeroskipPNG} />
+				<img src={ItakUoeroskipPNG} alt="Itak" />
+			</picture>
+			<h3>Itak-uoeroskip</h3>
+		</a>
+		<a href="https://itah.aynu.org/">
+			<picture>
+				<source type="image/png" srcset={AynuItahPNG} />
+				<img src={AynuItahPNG} alt="AynuItah" />
+			</picture>
+			<h3>Айну-Итах</h3>
 		</a>
 	</div>
 </section>
