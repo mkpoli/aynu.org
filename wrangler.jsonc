@@ -8,5 +8,6 @@
 	"assets": {
 		"binding": "ASSETS",
 		"directory": ".svelte-kit/cloudflare"
-	}
+	},
+	"routes": [{ "pattern": "aynu.org", "custom_domain": true }]
 }
