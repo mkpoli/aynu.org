@@ -1,3 +1,134 @@
 @import 'sanitize.css';
 @import 'sanitize.css/forms.css';
 @import 'sanitize.css/typography.css';
+
+/* ── Design tokens ─────────────────────────────────────────────
+   A distinct Ainu visual identity: warm "attus" cream paper,
+   deep indigo ground (dyed cloth), madder-red thread accent. */
+:root {
+	--paper: #f5efe4;
+	--surface: #fffdf8;
+	--ink: #1e2330;
+	--ink-muted: #5a6072;
+	--indigo: #243b5e;
+	--indigo-deep: #161d2e;
+	--madder: #b23a2e;
+	--cream: #f0e9da;
+	--hairline: rgba(30, 35, 48, 0.12);
+	--shadow: 0 1px 2px rgba(30, 35, 48, 0.04), 0 10px 30px rgba(30, 35, 48, 0.07);
+	--shadow-hover: 0 2px 6px rgba(30, 35, 48, 0.06), 0 18px 44px rgba(30, 35, 48, 0.12);
+
+	--font-display: 'Shippori Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+	--font-body:
+		'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', system-ui, -apple-system,
+		'Segoe UI', Roboto, sans-serif;
+
+	--maxw: 1100px;
+	--radius: 16px;
+	--header-h: 64px;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--paper: #0f1422;
+		--surface: #1b2440;
+		--ink: #ece4d4;
+		--ink-muted: #9aa3bd;
+		--indigo: #9bbcec;
+		--indigo-deep: #0b1020;
+		--cream: #f0e9da;
+		--hairline: rgba(240, 233, 218, 0.14);
+		--shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 30px rgba(0, 0, 0, 0.35);
+		--shadow-hover: 0 2px 6px rgba(0, 0, 0, 0.35), 0 18px 44px rgba(0, 0, 0, 0.5);
+	}
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: calc(var(--header-h) + 1rem);
+	background-color: var(--paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+	margin: 0;
+	background-color: var(--paper);
+	color: var(--ink);
+	font-family: var(--font-body);
+	font-size: 1rem;
+	line-height: 1.75;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-display);
+	font-weight: 700;
+	line-height: 1.18;
+	letter-spacing: 0.01em;
+	color: var(--ink);
+	margin: 0;
+	text-wrap: balance;
+}
+
+p {
+	margin: 0;
+	text-wrap: pretty;
+}
+
+a {
+	color: var(--indigo);
+	text-decoration: none;
+	transition: color 0.18s ease;
+}
+
+a:hover {
+	color: var(--madder);
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+::selection {
+	background: var(--indigo);
+	color: var(--cream);
+}
+
+:focus-visible {
+	outline: 2px solid var(--madder);
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+/* ── Layout helpers ────────────────────────────────────────── */
+.container {
+	width: 100%;
+	max-width: var(--maxw);
+	margin-inline: auto;
+	padding-inline: 1.5rem;
+}
+
+.section {
+	padding-block: clamp(3.5rem, 8vw, 6rem);
+}
+
+.eyebrow {
+	font-family: var(--font-body);
+	font-weight: 700;
+	font-size: 0.8rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--madder);
+}

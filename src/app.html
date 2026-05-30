@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ain">
 	<head>
 		<meta charset="utf-8" />
@@ -7,11 +7,43 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="%sveltekit.assets%//favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="%sveltekit.assets%//favicon-16x16.png" />
 		<link rel="manifest" href="%sveltekit.assets%//site.webmanifest" />
-		<link rel="mask-icon" href="%sveltekit.assets%//safari-pinned-tab.svg" color="#5bbad5" />
-		<meta name="msapplication-TileColor" content="#da532c" />
-		<meta name="theme-color" content="#ffffff" />
+		<link rel="mask-icon" href="%sveltekit.assets%/safari-pinned-tab.svg" color="#243b5e" />
+		<meta name="msapplication-TileColor" content="#161d2e" />
+		<meta name="theme-color" content="#161d2e" media="(prefers-color-scheme: dark)" />
+		<meta name="theme-color" content="#f5efe4" media="(prefers-color-scheme: light)" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Fonts: Shippori Mincho (display) + Zen Kaku Gothic New (body) -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+		/>
+
+		<!-- SEO / Open Graph -->
+		<meta
+			name="description"
+			content="Aynu.org anak Aynu itak Aynu puri eyam cikarkoranpe uekarpa sait ne. The Aynu.org collective builds free tools and resources for the Ainu language and culture."
+		/>
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Aynu.org Mosem" />
+		<meta property="og:title" content="Aynu.org Mosem" />
+		<meta
+			property="og:description"
+			content="Aynu itak Aynu puri eyam cikarkoranpe uekarpa sait. Free tools and resources for the Ainu language."
+		/>
+		<meta property="og:url" content="https://aynu.org/" />
+		<meta property="og:image" content="https://aynu.org/android-chrome-512x512.png" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="Aynu.org Mosem" />
+		<meta
+			name="twitter:description"
+			content="Aynu itak Aynu puri eyam cikarkoranpe uekarpa sait. Free tools and resources for the Ainu language."
+		/>
+		<meta name="twitter:image" content="https://aynu.org/android-chrome-512x512.png" />
+
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

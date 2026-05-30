@@ -1,89 +1,34 @@
 <script lang="ts">
-	import AynuwikiPNG from '$assets/images/logos/png/Aynuwiki.png';
-	import AynuwikiAVIF from '$assets/images/logos/avif/Aynuwiki.avif';
-	import UkosammaniPNG from '$assets/images/logos/png/Ukosamani.png';
-	import UkosammaniAVIF from '$assets/images/logos/avif/Ukosamani.avif';
-	import IeonnekunnepPNG from '$assets/images/logos/png/Ieonnekunnep.png';
-	import IeonnekunnepAVIF from '$assets/images/logos/avif/Ieonnekunnep.avif';
-	import ItakUoeroskipPNG from '$assets/images/logos/png/Itak-uoeroskip.png';
-	import AynuItahPNG from '$assets/images/logos/png/Aynu-Itah.png';
+	import SectionHeading from '$lib/components/SectionHeading.svelte';
+	import Card from '$lib/components/Card.svelte';
+	import { sites } from '$lib/data';
 </script>
 
-<section>
-	<h2>Cikarkoranpe</h2>
-
-	<div class="projects">
-		<a href="https://wiki.aynu.org/">
-			<picture>
-				<source type="image/avif" srcset={AynuwikiAVIF} />
-				<source type="image/png" srcset={AynuwikiPNG} />
-				<img src={AynuwikiPNG} alt="Aynuwiki" />
-			</picture>
-			<h3>Aynuwiki</h3>
-		</a>
-		<a href="https://site.aynu.org/">
-			<picture>
-				<source type="image/avif" srcset={UkosammaniAVIF} />
-				<source type="image/png" srcset={UkosammaniPNG} />
-				<img src={UkosammaniPNG} alt="Ukosammani" />
-			</picture>
-			<h3>Aynuitak-nuye <br /> Ukosamaani Sait</h3>
-		</a>
-		<a href="https://dict.aynu.org/">
-			<picture>
-				<source type="image/avif" srcset={IeonnekunnepAVIF} />
-				<source type="image/png" srcset={IeonnekunnepPNG} />
-				<img src={IeonnekunnepPNG} alt="Ieonnekunnep" />
-			</picture>
-			<h3>Aynuitak-<br />Eonnekunnep</h3>
-		</a>
-		<a href="https://itak.aynu.org/">
-			<picture>
-				<source type="image/png" srcset={ItakUoeroskipPNG} />
-				<img src={ItakUoeroskipPNG} alt="Itak" />
-			</picture>
-			<h3>Itak-uoeroskip</h3>
-		</a>
-		<a href="https://itah.aynu.org/">
-			<picture>
-				<source type="image/png" srcset={AynuItahPNG} />
-				<img src={AynuItahPNG} alt="AynuItah" />
-			</picture>
-			<h3>Айну-Итах</h3>
-		</a>
+<section class="section projects" id="cikarkoranpe">
+	<div class="container">
+		<SectionHeading eyebrow="aynu.org" title="Cikarkoranpe" />
+		<div class="grid">
+			{#each sites as site (site.href)}
+				<Card href={site.href} name={site.name} host={site.host}>
+					{#snippet media()}
+						<picture>
+							{#if site.logo.avif}
+								<source srcset={site.logo.avif} type="image/avif" />
+							{/if}
+							<source srcset={site.logo.png} type="image/png" />
+							<img src={site.logo.png} alt="{site.name} logo" loading="lazy" />
+						</picture>
+					{/snippet}
+				</Card>
+			{/each}
+		</div>
 	</div>
 </section>
 
 <style>
-	img {
-		width: 10em;
-		height: 10em;
-	}
-
-	.projects {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-		flex-wrap: wrap;
-		gap: 1em 4em;
-	}
-
-	a {
-		text-decoration: none;
-		color: inherit;
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.projects > a {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 1em;
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+		gap: 1.5rem;
 	}
 </style>

@@ -1,68 +1,25 @@
 <script lang="ts">
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	import SectionHero from '$lib/sections/SectionHero.svelte';
 	import SectionGreetings from '$lib/sections/SectionGreetings.svelte';
-	import SectionMembers from '$lib/sections/SectionMembers.svelte';
 	import SectionProjects from '$lib/sections/SectionProjects.svelte';
+	import SectionTools from '$lib/sections/SectionTools.svelte';
+	import SectionMembers from '$lib/sections/SectionMembers.svelte';
 </script>
 
 <svelte:head>
 	<title>Aynu.org Mosem</title>
 </svelte:head>
 
+<Header />
+
 <main>
-	<section>
-		<h1>Aynu.org Mosem</h1>
-	</section>
-
+	<SectionHero />
 	<SectionGreetings />
-
 	<SectionProjects />
-
-	<h2>Uwekarpare</h2>
-
-	<ul>
-		<li>
-			<a href="https://discord.aynu.org/"> Discord </a>
-		</li>
-	</ul>
-
+	<SectionTools />
 	<SectionMembers />
 </main>
 
-<footer>
-	<p>© 2024 Aynu.org</p>
-</footer>
-
-<style>
-	main {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-
-		min-height: 100svh;
-	}
-
-	main > :global(section) {
-		margin: 2em 0;
-		min-height: 100svh;
-
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	main > :global(section > h2) {
-		margin-top: 2em;
-		margin-bottom: 2em;
-	}
-
-	footer {
-		margin-top: 2em;
-		padding: 2em;
-	}
-
-	footer > p {
-		text-align: center;
-	}
-</style>
+<Footer />

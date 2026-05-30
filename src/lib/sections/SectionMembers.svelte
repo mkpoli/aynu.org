@@ -1,95 +1,104 @@
 <script lang="ts">
-	import HachiaPNG from '$assets/images/avatars/png/Hachia.png';
-	import MkpoliPNG from '$assets/images/avatars/png/Mkpoli.png';
-	import LucasPNG from '$assets/images/avatars/png/Lucas.png';
-	import KarumoPNG from '$assets/images/avatars/png/Karumo.png';
-	import HachiaAVIF from '$assets/images/avatars/avif/Hachia.avif';
-	import MkpoliAVIF from '$assets/images/avatars/avif/Mkpoli.avif';
-	import LucasAVIF from '$assets/images/avatars/avif/Lucas.avif';
-	import KarumoAVIF from '$assets/images/avatars/avif/Karumo.avif';
+	import SectionHeading from '$lib/components/SectionHeading.svelte';
+	import Icon from '$lib/components/Icon.svelte';
+	import { members } from '$lib/data';
 </script>
 
-<section>
-	<h2>Utar</h2>
+<section class="section members-section" id="utar">
+	<div class="container">
+		<SectionHeading eyebrow="Utar" title="Aynu.org Utar" intro="ne wa na an na…" />
 
-	<div class="members">
-		<div class="member-card">
-			<a href="https://twitter.com/hachia_go" target="_blank">
-				<picture>
-					<source srcset={HachiaAVIF} type="image/avif" />
-					<source srcset={HachiaPNG} type="image/png" />
-					<img src={HachiaPNG} alt="Hachia" />
-				</picture>
-				<h3>はちあ</h3>
-			</a>
-		</div>
-		<div class="member-card">
-			<a href="https://twitter.com/mkpoli" target="_blank">
-				<picture>
-					<source srcset={MkpoliAVIF} type="image/avif" />
-					<source srcset={MkpoliPNG} type="image/png" />
-					<img src={MkpoliPNG} alt="Mkpoli" />
-				</picture>
-				<h3>まくぽり</h3>
-			</a>
-		</div>
-		<div class="member-card">
-			<a href="https://twitter.com/Lucas_Yoyogi" target="_blank">
-				<picture>
-					<source srcset={LucasAVIF} type="image/avif" />
-					<source srcset={LucasPNG} type="image/png" />
-					<img src={LucasPNG} alt="Lucas" />
-				</picture>
-				<h3>代々木 ルーカス</h3>
-			</a>
-		</div>
-		<div class="member-card">
-			<a href="https://twitter.com/ranekrm" target="_blank">
-				<picture>
-					<source srcset={KarumoAVIF} type="image/avif" />
-					<source srcset={KarumoPNG} type="image/png" />
-					<img src={KarumoPNG} alt="Karumo" />
-				</picture>
-				<h3>かるも</h3>
-			</a>
-		</div>
-		<p>ne wa na an na…</p>
+		<ul class="members">
+			{#each members as member (member.href)}
+				<li>
+					<a class="member" href={member.href} target="_blank" rel="noreferrer">
+						<span class="avatar">
+							<picture>
+								{#if member.avatar.avif}
+									<source srcset={member.avatar.avif} type="image/avif" />
+								{/if}
+								<source srcset={member.avatar.png} type="image/png" />
+								<img src={member.avatar.png} alt={member.name} loading="lazy" />
+							</picture>
+							<span class="badge"><Icon name={member.platform} size={14} /></span>
+						</span>
+						<span class="name">{member.name}</span>
+					</a>
+				</li>
+			{/each}
+		</ul>
 	</div>
 </section>
 
 <style>
 	.members {
+		list-style: none;
+		margin: 0;
+		padding: 0;
 		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
 		flex-wrap: wrap;
-		gap: 1em 2em;
+		justify-content: center;
+		gap: 2rem 2.5rem;
 	}
 
-	.member-card {
+	.member {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		gap: 0.85rem;
+		color: var(--ink);
 	}
 
-	/* Make p always break to next line */
-
-	.members p {
-		width: 100%;
-		text-align: center;
+	.avatar {
+		position: relative;
+		display: block;
+		transition: transform 0.2s ease;
 	}
 
-	.member-card img {
-		width: 10em;
-		height: 10em;
+	.member:hover .avatar {
+		transform: translateY(-4px);
+	}
+
+	.member picture {
+		display: block;
+	}
+
+	.member img {
+		width: 7.5rem;
+		height: 7.5rem;
 		border-radius: 50%;
+		object-fit: cover;
+		border: 3px solid var(--surface);
+		box-shadow: var(--shadow);
+		transition: box-shadow 0.2s ease;
 	}
 
-	.member-card > a {
-		text-decoration: none;
-		color: inherit;
-		text-align: center;
+	.member:hover img {
+		box-shadow: var(--shadow-hover);
+	}
+
+	.badge {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		display: grid;
+		place-items: center;
+		width: 2rem;
+		height: 2rem;
+		border-radius: 50%;
+		background: var(--indigo-deep);
+		color: var(--cream);
+		border: 2px solid var(--paper);
+	}
+
+	.name {
+		font-family: var(--font-display);
+		font-weight: 700;
+		font-size: 1.05rem;
+		color: var(--ink);
+	}
+
+	.member:hover .name {
+		color: var(--madder);
 	}
 </style>
