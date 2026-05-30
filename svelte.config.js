@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -8,11 +8,10 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		// The site is fully static (prerendered) — adapter-static emits a
-		// portable build/ directory deployable on any static host.
-		adapter: adapter({
-			fallback: '404.html'
-		}),
+		// Deployed on Cloudflare Pages (project "aynu-org"); the page is fully
+		// prerendered (see +layout.ts), so this emits static assets plus a
+		// minimal worker into .svelte-kit/cloudflare.
+		adapter: adapter(),
 		alias: {
 			$assets: './src/assets'
 		}
