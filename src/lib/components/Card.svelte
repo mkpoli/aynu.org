@@ -14,6 +14,10 @@
 		host?: string;
 		media?: Snippet;
 	} = $props();
+
+	// Shippori Mincho (display font) has no Cyrillic glyphs, so titles like
+	// "Айну-Итах" fall back to an ugly mismatch — give them a Cyrillic serif.
+	const isCyrillic = $derived(/[Ѐ-ӿ]/.test(name));
 </script>
 
 <a class="card" {href} target="_blank" rel="noreferrer">
@@ -21,7 +25,7 @@
 		<div class="card-media">{@render media()}</div>
 	{/if}
 	<div class="card-text">
-		<h3 class="card-title">{name}</h3>
+		<h3 class="card-title" class:cyrillic={isCyrillic}>{name}</h3>
 		{#if desc}
 			<p class="card-desc">{desc}</p>
 		{/if}
@@ -77,6 +81,10 @@
 
 	.card-title {
 		font-size: 1.3rem;
+	}
+
+	.card-title.cyrillic {
+		font-family: Georgia, 'Times New Roman', serif;
 	}
 
 	.card-desc {

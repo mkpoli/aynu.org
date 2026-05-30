@@ -7,8 +7,8 @@
 		<SectionHeading eyebrow="Irankarapte" title="Uerankarap" />
 		<div class="prose">
 			<p>
-				<b>Aynu.org</b> anak usa cikarkoranpe karkur uekarpa sait ne. Aynu itak ka Aynu puri ka irammakaka
-				eci=eramuoka wa un=kore yak pirka na.
+				<b>Aynu.org</b> anak usa okay cikarkoranpe kar kur uekarpare sait ne. Aynu itak ka Aynu puri ka
+				irammakaka eci=eramuoka wa un=kore yak pirka na.
 			</p>
 			<p class="en">
 				Aynu.org is a gathering place for tools and resources made by our community. We hope they

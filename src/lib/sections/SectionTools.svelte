@@ -1,13 +1,21 @@
 <script lang="ts">
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import Card from '$lib/components/Card.svelte';
-	import { tools, toolsHref } from '$lib/data';
+	import Icon from '$lib/components/Icon.svelte';
+	import { tools, toolsHref, packages } from '$lib/data';
 
 	const kindLabel: Record<string, string> = {
 		app: 'App',
 		data: 'Dataset',
 		lib: 'Library',
 		mod: 'Resource pack'
+	};
+
+	const registryKeys = ['npm', 'crates', 'pypi'] as const;
+	const registryLabel: Record<(typeof registryKeys)[number], string> = {
+		npm: 'npm',
+		crates: 'crates.io',
+		pypi: 'PyPI'
 	};
 </script>
 
@@ -29,6 +37,41 @@
 						</span>
 					{/snippet}
 				</Card>
+			{/each}
+		</div>
+
+		<h3 class="pkg-label">Packages</h3>
+		<div class="grid">
+			{#each packages as pkg (pkg.name)}
+				<div class="pkg">
+					<div class="pkg-head">
+						<span class="mono">{pkg.name.charAt(0).toUpperCase()}</span>
+						<div class="pkg-text">
+							<h4 class="pkg-name">{pkg.name}</h4>
+							<p class="pkg-desc">{pkg.desc}</p>
+						</div>
+					</div>
+					<div class="registries">
+						{#each registryKeys as reg (reg)}
+							{#if pkg.registries[reg]}
+								<a class="reg" href={pkg.registries[reg]} target="_blank" rel="noreferrer">
+									{registryLabel[reg]}
+								</a>
+							{/if}
+						{/each}
+						{#if pkg.registries.github}
+							<a
+								class="reg gh"
+								href={pkg.registries.github}
+								target="_blank"
+								rel="noreferrer"
+								aria-label="{pkg.name} on GitHub"
+							>
+								<Icon name="github" size={15} />
+							</a>
+						{/if}
+					</div>
+				</div>
 			{/each}
 		</div>
 
@@ -77,6 +120,85 @@
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--madder);
+	}
+
+	.pkg-label {
+		margin-top: 2.75rem;
+		margin-bottom: 1.25rem;
+		font-family: var(--font-body);
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: var(--madder);
+	}
+
+	.pkg {
+		display: flex;
+		flex-direction: column;
+		gap: 1.1rem;
+		height: 100%;
+		padding: 1.6rem;
+		background: var(--surface);
+		border: 1px solid var(--hairline);
+		border-radius: var(--radius);
+		box-shadow: var(--shadow);
+	}
+
+	.pkg-head {
+		display: flex;
+		align-items: center;
+		gap: 0.9rem;
+	}
+
+	.pkg-text {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.pkg-name {
+		font-size: 1.15rem;
+		font-family: var(--font-body);
+		font-weight: 700;
+	}
+
+	.pkg-desc {
+		color: var(--ink-muted);
+		font-size: 0.9rem;
+		line-height: 1.55;
+	}
+
+	.registries {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-top: auto;
+	}
+
+	.reg {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3rem;
+		padding: 0.3rem 0.7rem;
+		border-radius: 999px;
+		border: 1px solid var(--hairline);
+		font-family: var(--font-body);
+		font-size: 0.8rem;
+		font-weight: 500;
+		color: var(--ink-muted);
+		transition:
+			color 0.18s ease,
+			border-color 0.18s ease;
+	}
+
+	.reg:hover {
+		color: var(--madder);
+		border-color: color-mix(in srgb, var(--madder) 45%, var(--hairline));
+	}
+
+	.reg.gh {
+		padding: 0.3rem 0.55rem;
 	}
 
 	.more {

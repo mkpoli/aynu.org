@@ -1,22 +1,27 @@
 <script lang="ts">
 	import Moreu from '$lib/components/Moreu.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 </script>
 
 <section class="hero" id="top">
 	<div class="frieze frieze-top"><Moreu variant="frieze" /></div>
 
 	<div class="container content">
-		<p class="eyebrow">Aynu Mosir · アイヌモシㇼ</p>
+		<p class="eyebrow">aynumosir</p>
 		<h1>Aynu.org Mosem</h1>
-		<p class="lead">Aynu itak, Aynu puri eyam — usa cikarkoranpe uekarpa sait.</p>
+		<p class="lead">Aynu itak, Aynu puri eyam — usa cikarkoranpe uekarpare sait.</p>
 		<p class="sub">
 			A community hub for free, open tools and resources that help people learn, use and cherish the
 			Ainu language and culture.
 		</p>
 		<div class="cta">
-			<a class="btn btn-primary" href="#cikarkoranpe">Cikarkoranpe nukar</a>
+			<a class="btn btn-primary" href="#cikarkoranpe">
+				<span>Cikarkoranpe nukar</span>
+				<Icon name="arrow-down" size={18} />
+			</a>
 			<a class="btn btn-ghost" href="https://discord.aynu.org/" target="_blank" rel="noreferrer">
-				Discord un arpa
+				<Icon name="discord" size={18} />
+				<span>Discord or un ahup</span>
 			</a>
 		</div>
 	</div>
@@ -90,6 +95,7 @@
 	.btn {
 		display: inline-flex;
 		align-items: center;
+		gap: 0.5rem;
 		padding: 0.8rem 1.6rem;
 		border-radius: 999px;
 		font-family: var(--font-body);

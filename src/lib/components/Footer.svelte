@@ -13,7 +13,7 @@
 					<span class="brand-mark">ᴀ</span>
 					<span>Aynu.org</span>
 				</a>
-				<p class="tagline">Aynu itak Aynu puri eyam cikarkoranpe uekarpa sait.</p>
+				<p class="tagline">Aynu itak Aynu puri eyam cikarkoranpe uekarpare sait.</p>
 				<div class="socials">
 					{#each communityLinks as link (link.href)}
 						<a href={link.href} target="_blank" rel="noreferrer" aria-label={link.label}>
@@ -49,7 +49,7 @@
 		</div>
 
 		<div class="bottom">
-			<p>© {new Date().getFullYear()} Aynu.org Mosem</p>
+			<p>© 2023–2026 Aynu.org Mosem</p>
 			<p class="lang">Aynu itak / アイヌ イタㇰ</p>
 		</div>
 	</div>

@@ -6,7 +6,7 @@
 		size = 18,
 		class: klass = ''
 	}: {
-		name: 'discord' | 'github' | 'x' | 'huggingface' | 'link';
+		name: 'discord' | 'github' | 'x' | 'huggingface' | 'link' | 'arrow-down';
 		size?: number;
 		class?: string;
 	} = $props();
@@ -20,7 +20,23 @@
 	};
 </script>
 
-{#if name === 'huggingface'}
+{#if name === 'arrow-down'}
+	<svg
+		class={klass}
+		width={size}
+		height={size}
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2.2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		role="presentation"
+		aria-hidden="true"
+	>
+		<path d="M12 5v14M5 12l7 7 7-7" />
+	</svg>
+{:else if name === 'huggingface'}
 	<span
 		class={klass}
 		style="font-size:{size}px;line-height:1"

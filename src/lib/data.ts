@@ -29,7 +29,7 @@ export type Site = {
 	name: string;
 	href: string;
 	host: string;
-	logo: Img;
+	logo?: Img;
 };
 
 export type Tool = {
@@ -38,6 +38,12 @@ export type Tool = {
 	host: string;
 	desc: string;
 	kind: 'app' | 'data' | 'lib' | 'mod';
+};
+
+export type Package = {
+	name: string;
+	desc: string;
+	registries: { npm?: string; crates?: string; pypi?: string; github?: string };
 };
 
 export type Platform = 'x' | 'github' | 'link';
@@ -70,7 +76,7 @@ export const sites: Site[] = [
 		logo: { png: UkosamaniPng, avif: UkosamaniAvif }
 	},
 	{
-		name: 'Eonnekunnep',
+		name: 'Poro Cinumkekampi',
 		href: 'https://dict.aynu.org/',
 		host: 'dict.aynu.org',
 		logo: { png: IeonnekunnepPng, avif: IeonnekunnepAvif }
@@ -86,6 +92,16 @@ export const sites: Site[] = [
 		href: 'https://itah.aynu.org/',
 		host: 'itah.aynu.org',
 		logo: { png: AynuItahPng }
+	},
+	{
+		name: 'tu itak re itak',
+		href: 'https://quiz.aynu.org/',
+		host: 'quiz.aynu.org'
+	},
+	{
+		name: 'ainu-mcp',
+		href: 'https://mcp.aynu.org/',
+		host: 'mcp.aynu.org'
 	}
 ];
 
@@ -120,13 +136,30 @@ export const tools: Tool[] = [
 		host: 'github.com/aynumosir',
 		desc: 'Resource pack for playing Minecraft in the Ainu language.',
 		kind: 'mod'
+	}
+];
+
+// ── Packages — libraries published to npm / crates.io / PyPI ──
+export const packages: Package[] = [
+	{
+		name: 'ainconv',
+		desc: 'Convert Ainu text between Latin, Katakana and Cyrillic scripts.',
+		registries: {
+			npm: 'https://www.npmjs.com/package/ainconv',
+			crates: 'https://crates.io/crates/ainconv',
+			pypi: 'https://pypi.org/project/ainconv/',
+			github: 'https://github.com/mkpoli/ainconv'
+		}
 	},
 	{
 		name: 'ainu-utils',
-		href: 'https://github.com/aynumosir/ainu-utils',
-		host: 'github.com/aynumosir',
-		desc: 'Ainu language processing library for Rust, JavaScript and Python.',
-		kind: 'lib'
+		desc: 'A collection of utilities for processing the Ainu language.',
+		registries: {
+			npm: 'https://www.npmjs.com/package/ainu-utils',
+			crates: 'https://crates.io/crates/ainu-utils',
+			pypi: 'https://pypi.org/project/ainu-utils/',
+			github: 'https://github.com/aynumosir/ainu-utils'
+		}
 	}
 ];
 
