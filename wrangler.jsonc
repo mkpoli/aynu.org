@@ -1,0 +1,12 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "aynu-org",
+	"account_id": "5e6d5236e83c2395b253db1ec8e28a3e",
+	"main": ".svelte-kit/cloudflare/_worker.js",
+	"compatibility_date": "2025-05-01",
+	"compatibility_flags": ["nodejs_als"],
+	"assets": {
+		"binding": "ASSETS",
+		"directory": ".svelte-kit/cloudflare"
+	}
+}

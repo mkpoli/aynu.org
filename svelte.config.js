@@ -8,9 +8,9 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		// Deployed on Cloudflare Pages (project "aynu-org"); the page is fully
-		// prerendered (see +layout.ts), so this emits static assets plus a
-		// minimal worker into .svelte-kit/cloudflare.
+		// Deployed on Cloudflare Workers (Static Assets) — see wrangler.jsonc.
+		// The page is fully prerendered (see +layout.ts), so this emits static
+		// assets plus a minimal worker into .svelte-kit/cloudflare.
 		adapter: adapter(),
 		alias: {
 			$assets: './src/assets'
