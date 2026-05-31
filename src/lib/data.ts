@@ -9,6 +9,8 @@ import IeonnekunnepPng from '$assets/images/logos/png/Ieonnekunnep.png';
 import IeonnekunnepAvif from '$assets/images/logos/avif/Ieonnekunnep.avif';
 import ItakUoeroskipPng from '$assets/images/logos/png/Itak-uoeroskip.png';
 import AynuItahPng from '$assets/images/logos/png/Aynu-Itah.png';
+import TuItakReItakPng from '$assets/images/logos/png/TuItakReItak.png';
+import AinuSourcesPng from '$assets/images/logos/png/AinuSources.png';
 
 import HachiaPng from '$assets/images/avatars/png/Hachia.png';
 import HachiaAvif from '$assets/images/avatars/avif/Hachia.avif';
@@ -96,7 +98,14 @@ export const sites: Site[] = [
 	{
 		name: 'tu itak re itak',
 		href: 'https://quiz.aynu.org/',
-		host: 'quiz.aynu.org'
+		host: 'quiz.aynu.org',
+		logo: { png: TuItakReItakPng }
+	},
+	{
+		name: 'Ainu Sources',
+		href: 'https://db.aynu.org/',
+		host: 'db.aynu.org',
+		logo: { png: AinuSourcesPng }
 	},
 	{
 		name: 'ainu-mcp',
