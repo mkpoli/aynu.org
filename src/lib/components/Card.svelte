@@ -70,6 +70,9 @@
 		width: 4.5rem;
 		height: 4.5rem;
 		object-fit: contain;
+		/* Rounds full-bleed square icons (e.g. quiz / db / mcp); transparent
+		   circle / hexagon logos are unaffected since their corners are empty. */
+		border-radius: 16px;
 	}
 
 	.card-text {

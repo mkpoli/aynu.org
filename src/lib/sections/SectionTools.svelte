@@ -32,7 +32,11 @@
 				<Card href={tool.href} name={tool.name} desc={tool.desc} host={tool.host}>
 					{#snippet media()}
 						<span class="badge" data-kind={tool.kind}>
-							<span class="mono">{tool.name.charAt(0).toUpperCase()}</span>
+							{#if tool.logo}
+								<img class="logo" src={tool.logo.png} alt="{tool.name} logo" loading="lazy" />
+							{:else}
+								<span class="mono">{tool.name.charAt(0).toUpperCase()}</span>
+							{/if}
 							<span class="kind">{kindLabel[tool.kind]}</span>
 						</span>
 					{/snippet}
@@ -45,7 +49,7 @@
 			{#each packages as pkg (pkg.name)}
 				<div class="pkg">
 					<div class="pkg-head">
-						<span class="mono">{pkg.name.charAt(0).toUpperCase()}</span>
+						<span class="mono"><Icon name="package" size={24} /></span>
 						<div class="pkg-text">
 							<h4 class="pkg-name">{pkg.name}</h4>
 							<p class="pkg-desc">{pkg.desc}</p>
@@ -111,6 +115,14 @@
 		font-family: var(--font-display);
 		font-weight: 700;
 		font-size: 1.4rem;
+	}
+
+	/* Override Card's larger media-img sizing for the compact tool badge. */
+	.badge .logo {
+		width: 3rem;
+		height: 3rem;
+		object-fit: contain;
+		border-radius: 12px;
 	}
 
 	.kind {

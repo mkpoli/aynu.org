@@ -11,6 +11,12 @@ import ItakUoeroskipPng from '$assets/images/logos/png/Itak-uoeroskip.png';
 import AynuItahPng from '$assets/images/logos/png/Aynu-Itah.png';
 import TuItakReItakPng from '$assets/images/logos/png/TuItakReItak.png';
 import AinuSourcesPng from '$assets/images/logos/png/AinuSources.png';
+import AinuMcpPng from '$assets/images/logos/png/AinuMcp.png';
+
+import KampisosPng from '$assets/images/logos/png/Kampisos.png';
+import TunciPng from '$assets/images/logos/png/Tunci.png';
+import AinuCorporaPng from '$assets/images/logos/png/AinuCorpora.png';
+import MinecraftAinuPng from '$assets/images/logos/png/MinecraftAinu.png';
 
 import HachiaPng from '$assets/images/avatars/png/Hachia.png';
 import HachiaAvif from '$assets/images/avatars/avif/Hachia.avif';
@@ -40,6 +46,7 @@ export type Tool = {
 	host: string;
 	desc: string;
 	kind: 'app' | 'data' | 'lib' | 'mod';
+	logo?: Img;
 };
 
 export type Package = {
@@ -110,7 +117,8 @@ export const sites: Site[] = [
 	{
 		name: 'ainu-mcp',
 		href: 'https://mcp.aynu.org/',
-		host: 'mcp.aynu.org'
+		host: 'mcp.aynu.org',
+		logo: { png: AinuMcpPng }
 	}
 ];
 
@@ -123,28 +131,32 @@ export const tools: Tool[] = [
 		href: 'https://kampisos.aynu.io/',
 		host: 'kampisos.aynu.io',
 		desc: 'Modern online corpus with full-text search and advanced filtering.',
-		kind: 'app'
+		kind: 'app',
+		logo: { png: KampisosPng }
 	},
 	{
 		name: 'Tunci',
 		href: 'https://tunci.aynu.io/',
 		host: 'tunci.aynu.io',
 		desc: 'Experimental Ainu machine translation with dialects and examples.',
-		kind: 'app'
+		kind: 'app',
+		logo: { png: TunciPng }
 	},
 	{
 		name: 'ainu-corpora',
 		href: 'https://github.com/aynumosir/ainu-corpora',
 		host: 'github.com/aynumosir',
 		desc: 'Ainu–Japanese parallel dataset of over 1.7 million words.',
-		kind: 'data'
+		kind: 'data',
+		logo: { png: AinuCorporaPng }
 	},
 	{
 		name: 'minecraft-ainu',
 		href: 'https://github.com/aynumosir/minecraft-ainu',
 		host: 'github.com/aynumosir',
 		desc: 'Resource pack for playing Minecraft in the Ainu language.',
-		kind: 'mod'
+		kind: 'mod',
+		logo: { png: MinecraftAinuPng }
 	}
 ];
 
